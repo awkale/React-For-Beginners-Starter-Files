@@ -48,6 +48,15 @@ class App extends React.Component {
     this.setState({ fishes }); // updating using es6 prop and value same name
   };
 
+  updateFish = (key, updatedFish) => {
+    //take copy of current state
+    const fishes = {...this.state.fishes};
+    // update that state
+    fishes[key] = updatedFish;
+    // set that to state
+    this.setState({fishes});
+  };
+
   loadSampleFishes = () => {
     this.setState({ fishes: sampleFishes });
   };
@@ -81,7 +90,12 @@ class App extends React.Component {
           fishes={this.state.fishes}
           order={this.state.order}
           ></Order>
-        <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes}></Inventory>
+        <Inventory
+          addFish={this.addFish}
+          updateFish={this.updateFish}
+          loadSampleFishes={this.loadSampleFishes}
+          fishes={this.state.fishes}
+          ></Inventory>
       </div>
     )
   };
