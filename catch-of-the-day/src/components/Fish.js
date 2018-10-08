@@ -13,7 +13,8 @@ class Fish extends React.Component {
       price: PropTypes.number
     }),
     addToOrder: PropTypes.func
-  }
+  };
+
   handleClick = () => {
     this.props.addToOrder(this.props.index);
   };

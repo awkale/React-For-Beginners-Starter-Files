@@ -12,7 +12,8 @@ class EditFishForm extends React.Component {
     }),
     index: PropTypes.string,
     updateFish: PropTypes.func
-  }
+  };
+
   handleChange = event => {
     //update fish
     //1 take a copy of current fish
